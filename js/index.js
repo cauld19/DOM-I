@@ -55,6 +55,9 @@ navBar.forEach((item) => {
   item.style.color = 'green';
 })
 
+
+
+
 let newATag = document.querySelector('header nav')
 
 let newNav = document.createElement('a');
