@@ -43,18 +43,25 @@ logo.setAttribute('src', siteContent["nav"]["img-src"])
 
 /* nav */
 
-let navBar = document.querySelectorAll('header nav a');
-navBar[0].textContent = siteContent['nav']['nav-item-1']
-navBar[1].textContent = siteContent['nav']['nav-item-2']
-navBar[2].textContent = siteContent['nav']['nav-item-3']
-navBar[3].textContent = siteContent['nav']['nav-item-4']
-navBar[4].textContent = siteContent['nav']['nav-item-5']
-navBar[5].textContent = siteContent['nav']['nav-item-6']
+let navBar = document.querySelectorAll('a');
+// navBar[0].textContent = siteContent['nav']['nav-item-1']
+// navBar[1].textContent = siteContent['nav']['nav-item-2']
+// navBar[2].textContent = siteContent['nav']['nav-item-3']
+// navBar[3].textContent = siteContent['nav']['nav-item-4']
+// navBar[4].textContent = siteContent['nav']['nav-item-5']
+// navBar[5].textContent = siteContent['nav']['nav-item-6']
 
-navBar.forEach((item) => {
+navBar.forEach((item, index) => {
   item.style.color = 'green';
+  item.textContent = siteContent['nav'][`nav-item-${index + 1}`]
+  console.log(item)
 })
 
+// for (let i = 0; i < navBar.length; i++) {
+//   navBar[i].style.color = "green";
+//   // item content iterated
+//   navBar[i].textContent = siteContent['nav'][`nav-item-${i + 1}`]
+// }
 
 let newATag = document.querySelector('header nav')
 
@@ -74,7 +81,7 @@ newNav2.style.color = 'green';
 /* cta */
 
 let ctaImg = document.querySelector('#cta-img');
-ctaImg.src = '../img/header-img.png';
+ctaImg.setAttribute('src', siteContent["cta"]["img-src"])
 
 let ctaText = document.querySelector('h1');
 ctaText.textContent = siteContent['cta']['h1'];
@@ -90,7 +97,7 @@ mainContentHeader[0].textContent = siteContent['main-content']['features-h4']
 mainContentHeader[1].textContent = siteContent['main-content']['about-h4']
 
 let middleImg = document.querySelector('#middle-img');
-middleImg.src = '../img/mid-page-accent.jpg';
+middleImg.setAttribute('src', siteContent["main-content"]["middle-img-src"])
 
 let mainContentText = document.querySelectorAll('.main-content .text-content p');
 mainContentText[0].textContent = siteContent['main-content']['features-content']
