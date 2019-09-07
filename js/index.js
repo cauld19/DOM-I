@@ -56,8 +56,6 @@ navBar.forEach((item) => {
 })
 
 
-
-
 let newATag = document.querySelector('header nav')
 
 let newNav = document.createElement('a');
@@ -124,3 +122,29 @@ contactText[2].textContent = siteContent['contact']['email']
 let footer = document.querySelector('footer');
 footer.textContent = siteContent['footer']['copyright']
 
+/* Stretch */
+
+let AllPTag = document.querySelectorAll('p')
+AllPTag.forEach((item) => {
+  item.style.color = 'red';
+})
+
+let contactHead = document.querySelector('.contact')
+
+let newButton = document.createElement('button');
+newButton.textContent = "Click ME!";
+newButton.style.border = 'none';
+newButton.style.width = '15rem';
+newButton.style.height = '3rem';
+newButton.style.fontSize = '2rem';
+
+
+
+
+
+contactHead.appendChild(newButton);
+
+newButton.addEventListener('click', (event) => {
+  ctaImg.style.transform = 'scale(1.3)';
+  ctaImg.style.transition = 'transform 1s';
+});
