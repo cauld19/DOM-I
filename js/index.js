@@ -40,3 +40,118 @@ const siteContent = {
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+/* nav */
+
+let navBar = document.querySelectorAll('a');
+// navBar[0].textContent = siteContent['nav']['nav-item-1']
+// navBar[1].textContent = siteContent['nav']['nav-item-2']
+// navBar[2].textContent = siteContent['nav']['nav-item-3']
+// navBar[3].textContent = siteContent['nav']['nav-item-4']
+// navBar[4].textContent = siteContent['nav']['nav-item-5']
+// navBar[5].textContent = siteContent['nav']['nav-item-6']
+
+navBar.forEach((item, index) => {
+  item.style.color = 'green';
+  item.textContent = siteContent['nav'][`nav-item-${index + 1}`]
+  console.log(item)
+})
+
+// for (let i = 0; i < navBar.length; i++) {
+//   navBar[i].style.color = "green";
+//   // item content iterated
+//   navBar[i].textContent = siteContent['nav'][`nav-item-${i + 1}`]
+// }
+
+let newATag = document.querySelector('header nav')
+
+let newNav = document.createElement('a');
+newNav.textContent = "Mystery";
+
+let newNav2 = document.createElement('a');
+newNav2.textContent = "Trial";
+
+newATag.appendChild(newNav);
+
+newATag.prepend(newNav2);
+
+newNav.style.color = 'green';
+newNav2.style.color = 'green';
+
+/* cta */
+
+let ctaImg = document.querySelector('#cta-img');
+ctaImg.setAttribute('src', siteContent["cta"]["img-src"])
+
+let ctaText = document.querySelector('h1');
+ctaText.textContent = siteContent['cta']['h1'];
+
+let ctaButton = document.querySelector('button');
+ctaButton.textContent = siteContent['cta']['button'];
+
+
+/* main content */
+
+let mainContentHeader = document.querySelectorAll('.main-content .text-content h4');
+mainContentHeader[0].textContent = siteContent['main-content']['features-h4']
+mainContentHeader[1].textContent = siteContent['main-content']['about-h4']
+
+let middleImg = document.querySelector('#middle-img');
+middleImg.setAttribute('src', siteContent["main-content"]["middle-img-src"])
+
+let mainContentText = document.querySelectorAll('.main-content .text-content p');
+mainContentText[0].textContent = siteContent['main-content']['features-content']
+mainContentText[1].textContent = siteContent['main-content']['about-content']
+
+/* bottom content*/
+
+let bottomContentHeader = document.querySelectorAll('.bottom-content .text-content h4');
+bottomContentHeader[0].textContent = siteContent['main-content']['services-h4']
+bottomContentHeader[1].textContent = siteContent['main-content']['product-h4']
+bottomContentHeader[2].textContent = siteContent['main-content']['vision-h4']
+
+let bottomContentText = document.querySelectorAll('.bottom-content .text-content p');
+bottomContentText[0].textContent = siteContent['main-content']['services-content']
+bottomContentText[1].textContent = siteContent['main-content']['product-content']
+bottomContentText[2].textContent = siteContent['main-content']['vision-content'];
+
+/* contact */
+
+let contactHeader = document.querySelector('.contact h4');
+contactHeader.textContent = siteContent['contact']['contact-h4']
+let contactText = document.querySelectorAll('.contact p');
+contactText[0].textContent = siteContent['contact']['address']
+contactText[1].textContent = siteContent['contact']['phone']
+contactText[2].textContent = siteContent['contact']['email']
+
+/* footer */
+
+let footer = document.querySelector('footer');
+footer.textContent = siteContent['footer']['copyright']
+
+/* Stretch */
+
+let AllPTag = document.querySelectorAll('p')
+AllPTag.forEach((item) => {
+  item.style.color = 'red';
+})
+
+let contactHead = document.querySelector('.contact')
+
+let newButton = document.createElement('button');
+newButton.textContent = "Click ME!";
+newButton.style.border = 'none';
+newButton.style.width = '15rem';
+newButton.style.height = '3rem';
+newButton.style.fontSize = '2rem';
+
+
+
+
+
+contactHead.appendChild(newButton);
+
+newButton.addEventListener('click', (event) => {
+  ctaImg.style.transform = 'scale(1.3)';
+  ctaImg.style.transition = 'transform 1s';
+});
